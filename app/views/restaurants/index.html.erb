@@ -2,6 +2,13 @@
 
 <ul>
   <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <li>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+      -
+      <%= link_to 'Excluir', restaurant_path(restaurant), method: :delete, data: { confirm: 'Tem certeza?'}, remote: true %>
+    </li>
   <% end %>
 </ul>
+
+
+<div data-controller='hello'></div>
